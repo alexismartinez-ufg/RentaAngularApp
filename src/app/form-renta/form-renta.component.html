@@ -1,0 +1,44 @@
+<div class="formcontainer">
+    <form class="example-form">
+        <h2 class="align-center">Calculo de descuentos sobre salario</h2>
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput class="inputMargin" [(ngModel)]="data.nombre" name="nombre">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput class="inputMargin" [(ngModel)]="data.apellido" name="apellido">
+                    </mat-form-field></td>
+            </tr>
+        </table>
+    
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Salario</mat-label>
+                        <span matPrefix>$ &nbsp;</span>
+                        <input matInput type="number" class="inputMargin" [(ngModel)]="data.salario" name="salario">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Departamento</mat-label>
+                        <mat-select [(ngModel)]="data.departamento" name="departamento">
+                            <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                                {{departamento.value}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    
+        <div class="SendContainer">
+            <button mat-flat-button color="primary" (click)="EmitData()">Procesar</button>
+        </div>
+    
+    </form>
+</div>

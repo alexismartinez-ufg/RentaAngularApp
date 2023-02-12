@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
+
+interface UserData {
+  nombre: string;
+  apellido: string;
+  salario: number;
+  departamento: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -6,5 +13,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'RentaAppMaterial';
+  public listitem: Array<UserData> = [];
+
+  SendToChild = new EventEmitter<UserData>();
+  onNotified(data: UserData) {
+    this.SendToChild.emit(data);
+  }
 }

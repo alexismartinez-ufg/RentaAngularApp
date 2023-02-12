@@ -1,0 +1,12 @@
+.tableContainer{
+    margin-top:35px;
+    display: flex;
+    justify-content: center;
+}
+
+.bordersize{
+    min-width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 7px 7px 10px 1px #888888 !important;
+}
